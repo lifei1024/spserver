@@ -1,0 +1,19 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: eureka-server
+eureka:
+  instance:
+    hostname: 172.25.20.127
+    prefer-ip-address: true
+    instance-id: 172.25.20.127:${server.port}
+  server:
+    renewal-percent-threshold: 0.5
+    enable-self-preservation: true
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://172.25.20.127:8085/eureka/
+
